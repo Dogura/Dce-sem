@@ -1,0 +1,13 @@
+# DCE semestral work
+---
+  - name: Setup Load balancer
+    hosts: master-balancer
+    become: true
+    roles:
+      - front
+  
+  - name: Setup nodes
+    hosts: slave-node
+    become: true
+    roles:
+      - back

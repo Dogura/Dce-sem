@@ -1,0 +1,21 @@
+- name: Copy content of directory 'backend'
+  copy:
+    src: /workspace/kiv-dce-sem/backend/
+    dest: /tmp/backend/
+
+- name: Build backend image
+  community.docker.docker_image:
+    build:
+      path: /tmp/backend/
+    name: backend
+    tag: v2
+    push: false
+    source: build
+    
+- name: Run Docker container
+  docker_container:
+    name: backend_container
+    image: backend:v2
+    state: started
+    ports:
+      "5000:5000"

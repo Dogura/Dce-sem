@@ -1,0 +1,9 @@
+[master-balancer]
+147.228.173.88
+
+[slave-node]
+147.228.173.82
+147.228.173.64
+
+[all:vars]
+ansible_user=nodeadm
