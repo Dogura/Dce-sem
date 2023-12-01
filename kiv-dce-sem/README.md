@@ -4,11 +4,7 @@ Tato práce vznikla na základě dvou projektů,  [KIV/DS exercise 3](https://gi
 Pro vytvoření infrastruktury pro aplikaci je využíváno technologií Terraform a Ansible. Terraform vygeneruje infrastrukturu pro Ansible, který na jednotlivé virtuální stroje provede delopoy frontedové nebo backendové části projektu. 
 Cílem je vytvořit infrastrukturu s jedním frontendem a několika parametrem upravitelnými počty nodů.
 
-## Deployment diagram
 
-![Demo 3 deployment diagram](demo-3-deployment.png)
-
-*Figure 1: Deployment diagram of Demo 3*
 ## Terraform
 Terraform se stará o vytváření infrasturktury podle postupu uvedeného v souborech .tfvars, variables.tf a terraform.tf. Projekt vychází z projektu kiv-dce-lab-project-k8s. Skript vytvoří master-balancer a slave-node podle specifikace. Po vytvoření virtuálů jsou nakopírovány soubory z init-scripts a vykonány na cílových nodech. Teraform následně využívá funkci OUTPUT a předem vytvořené šablony pro uložení ip-adress pro následné využití Ansiblem.
 
