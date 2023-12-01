@@ -30,9 +30,9 @@ terraform init
 terraform plan
 terraform apply
 yes
-'''
+```
 změnit ip adresy v souboru /frontend/config/backend-upstream na ip adresy vytvořených slave nodoes
-'''
+```
 export ANSIBLE_HOST_KEY_CHECKING=False
 ansible-playbook -i dynamic_inventories/inventory ansible/main_play.yml
 
