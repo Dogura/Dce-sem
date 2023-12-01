@@ -1,0 +1,24 @@
+{
+  "name": "IaC Development Container",
+  "dockerComposeFile": "docker-compose.yml",
+  "containerEnv": {
+    "ONE_XMLRPC": "https://nuada.zcu.cz/RPC2",
+    "ONE_AUTH": "/workspace/${localWorkspaceFolderBasename}/.devcontainer/one_auth"
+  },
+  "service": "iac-dev-container",
+  "workspaceFolder": "/workspace/${localWorkspaceFolderBasename}",
+  "postStartCommand": "bash /etc/init-iac-dev.sh",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+          "ms-azuretools.vscode-docker",
+          "esbenp.prettier-vscode",
+          "mohsen1.prettify-json",
+          "ms-python.vscode-pylance",
+          "ms-python.python",
+          "HashiCorp.terraform",
+          "redhat.ansible"]
+    }
+  }
+}
+
